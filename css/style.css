@@ -8,16 +8,16 @@
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
-    color: #140009;
-    background-color: #FFFFEB;
+    color: var(--dark-red);
+    background-color: var(--warm-cream);
 }
 
 /* Header */
 header {
-    background-color: #DBF1FB;
+    background-color: var(--light-coral);
     padding: 1rem;
     text-align: center;
-    box-shadow: 0 2px 4px rgba(20, 0, 9, 0.1);
+    box-shadow: 0 2px 4px rgba(140, 29, 29, 0.1);
 }
 
 nav ul {
@@ -32,17 +32,17 @@ nav ul li {
 
 nav ul li a {
     text-decoration: none;
-    color: #140009;
+    color: var(--dark-red);
     padding: 0.5rem;
     transition: color 0.3s;
 }
 
 nav ul li a:hover {
-    color: #CE272A;
+    color: var(--primary-red);
 }
 
 nav ul li a.active {
-    color: #F55E00;
+    color: var(--bright-orange);
 }
 
 /* Main Content */
@@ -59,12 +59,12 @@ main {
 }
 
 .recipe-card {
-    border: 1px solid #DBF1FB;
+    border: 1px solid var(--light-coral);
     border-radius: 8px;
     overflow: hidden;
     transition: transform 0.2s;
     background-color: white;
-    box-shadow: 0 2px 4px rgba(20, 0, 9, 0.1);
+    box-shadow: 0 2px 4px rgba(140, 29, 29, 0.1);
 }
 
 .recipe-card:hover {
@@ -84,8 +84,8 @@ main {
 
 .button {
     display: inline-block;
-    background-color: #CE272A;
-    color: #FFFFEB;
+    background-color: var(--primary-red);
+    color: var(--warm-cream);
     padding: 0.5rem 1rem;
     text-decoration: none;
     margin: 1rem;
@@ -94,7 +94,7 @@ main {
 }
 
 .button:hover {
-    background-color: #F55E00;
+    background-color: var(--bright-orange);
 }
 
 /* Recipe Detail Page */
@@ -106,14 +106,14 @@ main {
 }
 
 .recipe-detail h1 {
-    color: #CE272A;
+    color: var(--primary-red);
     margin-bottom: 1rem;
 }
 
 .ingredients, .instructions {
     margin: 2rem 0;
     padding: 1rem;
-    background-color: #DBF1FB;
+    background-color: var(--light-coral);
     border-radius: 4px;
 }
 
@@ -130,7 +130,92 @@ main {
 footer {
     text-align: center;
     padding: 2rem;
-    background-color: #DBF1FB;
+    background-color: var(--light-coral);
     margin-top: 2rem;
-    color: #140009;
+    color: var(--dark-red);
+}
+
+/* Golden Ratio Variables */
+:root {
+    --golden-ratio: 1.618;
+    --content-width: 61.8%; /* Based on golden ratio */
+    --spacing-unit: 1rem;
+    --spacing-large: calc(var(--spacing-unit) * var(--golden-ratio));
+    --spacing-small: calc(var(--spacing-unit) / var(--golden-ratio));
+    
+    /* New Color Palette */
+    --primary-red: #CE272A;     /* Your existing red */
+    --dark-red: #8C1D1D;        /* Darker shade for text and accents */
+    --bright-orange: #FF5733;   /* Vibrant orange for hover states */
+    --light-coral: #FFE6E6;     /* Very light red for backgrounds */
+    --warm-cream: #FFF5EA;      /* Warm off-white for main background */
+}
+
+/* About Section */
+.about-section {
+    padding: var(--spacing-large);
+    margin: var(--spacing-large) auto;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(20, 0, 9, 0.1);
+}
+
+.about-content {
+    display: flex;
+    gap: var(--spacing-large);
+    max-width: var(--content-width);
+    margin: 0 auto;
+    align-items: center;
+}
+
+.about-image {
+    flex: 1;
+}
+
+.about-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(20, 0, 9, 0.1);
+}
+
+.about-text {
+    flex: 1.618; /* Golden ratio */
+    padding: var(--spacing-unit);
+}
+
+.about-text h2 {
+    color: var(--primary-red);
+    margin-bottom: var(--spacing-unit);
+    font-size: calc(var(--spacing-unit) * 2);
+}
+
+.about-text p {
+    margin-bottom: var(--spacing-unit);
+    line-height: var(--golden-ratio);
+}
+
+/* Featured Recipes Section */
+.featured-recipes {
+    padding: var(--spacing-large) 0;
+}
+
+.featured-recipes h2 {
+    text-align: center;
+    color: var(--primary-red);
+    margin-bottom: var(--spacing-large);
+    font-size: calc(var(--spacing-unit) * 2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .about-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-image {
+        max-width: 300px;
+        margin: 0 auto;
+    }
 } 
