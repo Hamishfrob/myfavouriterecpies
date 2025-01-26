@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}} - Hamish's Recipes</title>
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Hamish's Recipes</h1>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/pages/tried-and-tested.html" class="active">Tried and Tested</a></li>
+                <li><a href="/pages/excited-to-try.html">Excited to Try</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <article class="recipe-detail">
+            <header class="recipe-header">
+                <h1>{{title}}</h1>
+                <div class="recipe-meta">
+                    <span>Prep Time: {{prepTime}}</span>
+                    <span>Cook Time: {{cookTime}}</span>
+                    <span>Total Time: {{totalTime}}</span>
+                </div>
+            </header>
+
+            <div class="recipe-content">
+                {{content}}
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <p>© 2024 Hamish's Recipes</p>
+    </footer>
+</body>
+</html> 
